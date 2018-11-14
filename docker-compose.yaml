@@ -30,7 +30,7 @@ services:
     image: penguin-formula/penguin-frontend
     container_name: penguin-frontend
     ports:
-      - "3001:3001"
+      - "5000:5000"
     networks:
       - penguin-network
     depends_on:
