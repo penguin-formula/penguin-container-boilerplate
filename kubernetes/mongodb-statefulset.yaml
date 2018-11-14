@@ -1,0 +1,23 @@
+apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+  name: mongodb-statefulset
+spec:
+  serviceName: mongodb
+  template:
+    metadata:
+      labels:
+       name: mongodb-pod
+    spec:
+      containers:
+        - name: mongodb-container
+          image: mongodb:latest
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: mongodb-volume
+              mountPath: /data/db
+      volumes:
+       - name: mongodb-volume
+         persistentVolumeClaim:
+           claimName: mongodb-volume-claim

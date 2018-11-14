@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:i
+ name: penguin-api-pod
+spec:
+  containers:
+    - name: penguin-api
+      image: penguin-formula/penguin-api
+      ports:
+       - containerPort: 3000

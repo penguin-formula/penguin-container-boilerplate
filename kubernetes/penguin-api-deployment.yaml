@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: penguin-api-deployment
+spec:
+  template:
+    metadata:
+      labels:
+       name: penguin-api-pod
+    spec:
+      containers:
+        - name: penbguin-api
+          image: penguin-formula/penguin-api:latest
+          ports:
+            - containerPort: 3000
