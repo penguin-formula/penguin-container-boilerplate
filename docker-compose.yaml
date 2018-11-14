@@ -1,0 +1,28 @@
+version: '3'
+services:
+
+  mongodb:
+    image: mongo
+    networks:
+      - penguin-network
+    ports:
+      - "27017"
+    volumes:
+      - "~/data:/data/db"
+
+  api:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    image: penguin-formula/penguin-api
+    container_name: penguin-api
+    ports:
+      - "3000:3000"
+    networks:
+      - penguin-network
+    depends_on:
+      - "mongodb"
+      
+networks:
+  penguin-network:
+    driver: bridge
