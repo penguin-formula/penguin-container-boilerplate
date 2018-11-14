@@ -10,9 +10,9 @@ services:
     volumes:
       - "~/data:/data/db"
 
-  api:
+  penguin-api:
     build:
-      dockerfile: ./Dockerfile
+      dockerfile: ./penguin-api/Dockerfile
       context: .
     image: penguin-formula/penguin-api
     container_name: penguin-api
@@ -22,6 +22,19 @@ services:
       - penguin-network
     depends_on:
       - "mongodb"
+
+  penguin-frontend:
+    build:
+      dockerfile: ./penguin-frontend/Dockerfile
+      context: .
+    image: penguin-formula/penguin-frontend
+    container_name: penguin-frontend
+    ports:
+      - "3001:3001"
+    networks:
+      - penguin-network
+    depends_on:
+      - "penguin-api"
       
 networks:
   penguin-network:
