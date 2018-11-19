@@ -7,10 +7,14 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import findAll from '../../services/penguinService';
 
 class Penguinlist extends Component {
   constructor(props) {
     super(props);
+    findAll().then(promise => {
+      console.log(promise);
+    });
     this.penguins = [
       {
         name: 'Mad Max',
