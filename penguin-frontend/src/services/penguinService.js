@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://penguin-api:3000';
+const baseURL = 'http://localhost:3000';
 
 export function findAll() {
   const resourceURL = `${baseURL}/penguin`;
@@ -13,8 +13,8 @@ export function create(entity) {
 }
 
 export function deletePenguin(id) {
-  let resourceURL = `${baseURL}/penguin`;
-  return axios.delete(resourceURL, id);
+  let resourceURL = `${baseURL}/penguin/${id}`;
+  return axios.delete(resourceURL);
 }
 
-export default { findAll };
+export default { findAll, deletePenguin };
