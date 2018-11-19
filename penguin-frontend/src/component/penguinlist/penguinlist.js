@@ -8,9 +8,9 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import CreatePenguinModal from '../create-penguin-modal/create-penguin-modal';
 import {
   findAll as findAllPenguins,
-  create as creatPenguin,
   deletePenguin,
 } from '../../services/penguinService';
 
@@ -41,44 +41,47 @@ class Penguinlist extends Component {
 
   renderTable() {
     return (
-      <Paper>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell numeric>age</TableCell>
-              <TableCell>color</TableCell>
-              <TableCell>specie</TableCell>
-              <TableCell />
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {this.state.penguins.map(penguin => {
-              return (
-                <TableRow key={penguin.id}>
-                  <TableCell component="th" scope="row">
-                    {penguin.name}
-                  </TableCell>
-                  <TableCell numeric>{penguin.age}</TableCell>
-                  <TableCell>{penguin.color}</TableCell>
-                  <TableCell>{penguin.specie}</TableCell>
-                  <TableCell>
-                    <div className="flex-item">
-                      <IconButton
-                        className="button"
-                        aria-label="Delete"
-                        onClick={() => this.deletePenguin(penguin)}
-                      >
-                        <Delete />
-                      </IconButton>
-                    </div>
-                  </TableCell>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </Paper>
+      <div>
+        <Paper>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Name</TableCell>
+                <TableCell numeric>age</TableCell>
+                <TableCell>color</TableCell>
+                <TableCell>specie</TableCell>
+                <TableCell />
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {this.state.penguins.map(penguin => {
+                return (
+                  <TableRow key={penguin.id}>
+                    <TableCell component="th" scope="row">
+                      {penguin.name}
+                    </TableCell>
+                    <TableCell numeric>{penguin.age}</TableCell>
+                    <TableCell>{penguin.color}</TableCell>
+                    <TableCell>{penguin.specie}</TableCell>
+                    <TableCell>
+                      <div className="flex-item">
+                        <IconButton
+                          className="button"
+                          aria-label="Delete"
+                          onClick={() => this.deletePenguin(penguin)}
+                        >
+                          <Delete />
+                        </IconButton>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </Paper>
+        <CreatePenguinModal />
+      </div>
     );
   }
 }
