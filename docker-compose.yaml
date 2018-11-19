@@ -12,8 +12,8 @@ services:
 
   penguin-api:
     build:
-      dockerfile: ./penguin-api/Dockerfile
-      context: .
+      dockerfile: ./Dockerfile
+      context: ./penguin-api
     image: penguin-formula/penguin-api
     container_name: penguin-api
     ports:
@@ -25,8 +25,8 @@ services:
 
   penguin-frontend:
     build:
-      dockerfile: ./penguin-frontend/Dockerfile
-      context: .
+      dockerfile: ./Dockerfile
+      context: ./penguin-frontend
     image: penguin-formula/penguin-frontend
     container_name: penguin-frontend
     ports:

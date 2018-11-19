@@ -11,11 +11,15 @@ export class PenguinService {
 
     async create(penguinDto: PenguinDto): Promise<Penguin> {
         const created  = new this.penguinModel(penguinDto);
-        return await created.save();
+        return created.save();
     }
 
     async findAll(): Promise<Penguin[]> {
-        return await this.penguinModel.find().exec();
+        return this.penguinModel.find();
+    }
+
+    async delete(id: string): Promise<any> {
+        return this.penguinModel.deleteOne({_id: id});
     }
 
 }

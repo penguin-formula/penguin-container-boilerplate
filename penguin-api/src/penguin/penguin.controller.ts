@@ -1,4 +1,4 @@
-import { Controller, Post, Get, HttpCode, Body } from '@nestjs/common';
+import { Controller, Post, Get, Delete, HttpCode, Body, Param } from '@nestjs/common';
 import { PenguinService } from './penguin.service';
 import { PenguinDto } from './penguin.dto';
 import { Penguin } from './penguin.interface';
@@ -18,6 +18,11 @@ export class PenguinController {
     @Get()
     async findAll(): Promise<Penguin[]> {
         return this.penguinService.findAll();
+    }
+
+    @Delete(':id')
+    async delete(@Param('id') id: string): Promise<any> {
+        return this.penguinService.delete(id);
     }
 
 }
