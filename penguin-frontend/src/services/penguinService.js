@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://penguin-api:3000';
+const baseURL = 'http://localhost:3000';
 
 export function findAll() {
   const resourceURL = `${baseURL}/penguin`;
