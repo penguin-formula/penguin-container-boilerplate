@@ -14,7 +14,7 @@ services:
     build:
       dockerfile: ./Dockerfile
       context: ./penguin-api
-    image: penguin-formula/penguin-api
+    image: penguinformula/penguin-api
     container_name: penguin-api
     ports:
       - "3000:3000"
@@ -27,7 +27,7 @@ services:
     build:
       dockerfile: ./Dockerfile
       context: ./penguin-frontend
-    image: penguin-formula/penguin-frontend
+    image: penguinformula/penguin-frontend
     container_name: penguin-frontend
     ports:
       - "5000:5000"
