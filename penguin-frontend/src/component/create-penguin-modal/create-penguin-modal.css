@@ -7,4 +7,13 @@
   margin-left: -150px;
   margin-top: -150px;
   background-color: white;
+  outline: none;
+}
+
+.modal-header {
+  background-color: #f7921e;
+  height: 50px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
 }

@@ -26,7 +26,9 @@ class CreatePenguinModal extends React.Component {
           open={this.state.open}
           onClose={this.handleClose}
         >
-          <div className="modal">aaa</div>
+          <div className="modal">
+            <div className="modal-header">New Penguin</div>
+          </div>
         </Modal>
       </div>
     );
