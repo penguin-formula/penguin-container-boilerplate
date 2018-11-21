@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: penguin-frontend-deployment
+spec:
+  template:
+    metadata:
+      labels:
+       name: penguin-frontend-pod
+    spec:
+      containers:
+        - name: penbguin-frontend
+          image: penguinformula/penguin-frontend-kube:latest
+          ports:
+            - containerPort: 5000
