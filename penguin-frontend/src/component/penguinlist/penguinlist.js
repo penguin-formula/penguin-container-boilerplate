@@ -80,7 +80,7 @@ class Penguinlist extends Component {
             </TableBody>
           </Table>
         </Paper>
-        <CreatePenguinModal />
+        <CreatePenguinModal updateParent={this.findPenguins.bind(this)} />
       </div>
     );
   }
