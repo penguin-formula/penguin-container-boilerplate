@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
     - name: penguin-api
-      image: penguin-formula/penguin-api
+      image: penguinformula/penguin-api
       ports:
        - containerPort: 3000

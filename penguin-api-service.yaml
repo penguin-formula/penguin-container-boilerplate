@@ -6,5 +6,6 @@ spec:
   type: LoadBalancer
   ports:
     - port: 3000
+      nodePort: 30000
   selector:
     name: penguin-api-pod

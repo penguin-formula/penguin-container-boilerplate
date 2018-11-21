@@ -10,6 +10,6 @@ spec:
     spec:
       containers:
         - name: penbguin-api
-          image: penguin-formula/penguin-api:latest
+          image: penguinformula/penguin-api:latest
           ports:
             - containerPort: 3000

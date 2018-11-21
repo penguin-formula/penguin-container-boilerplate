@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: penguin-frontend-pod
+spec:
+  containers:
+    - name: penguin-frontend
+      image: penguinformula/penguin-frontend-kube
+      ports:
+       - containerPort: 5000
