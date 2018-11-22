@@ -6,7 +6,7 @@ export const databaseProviders = [
         provide: DB_PROVIDER,
         useFactory: async () => {
             (mongoose as any).Promise = global.Promise;
-            return await mongoose.connect('mongodb://mongodb/penguin');
+            return await mongoose.connect('mongodb://mongodb-service/penguin');
         },
     },
 ];
